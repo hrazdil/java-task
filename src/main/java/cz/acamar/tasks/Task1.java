@@ -22,8 +22,11 @@ public class Task1 {
         }
         // find the end of the last word
         int idxEnd = str.length() - 1;
-        while (Character.isSpaceChar(str.charAt(idxEnd))) {
+        while (idxEnd >= 0 && Character.isSpaceChar(str.charAt(idxEnd))) {
             idxEnd--;
+        }
+        if (idxEnd == -1) {
+            return 0;
         }
         // find the start of the last word
         int idxStart = idxEnd - 1;
